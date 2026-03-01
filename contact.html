@@ -70,6 +70,38 @@
             color: #666;
             font-size: 0.9rem;
         }
+
+        /* Responsive tweaks */
+        @media (max-width: 768px) {
+            nav .nav-container {
+                flex-wrap: wrap;
+                gap: 1rem;
+                padding: 0 1rem;
+            }
+
+            nav a {
+                font-size: 1rem;
+            }
+
+            section.contact {
+                padding: 2rem 1rem;
+            }
+
+            section.contact h2 {
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .contact-icons {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .contact-icons img {
+                width: 50px;
+                height: 50px;
+            }
+        }
     </style>
 </head>
 <body>
