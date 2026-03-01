@@ -75,6 +75,32 @@
             color: #ccc;
         }
 
+        /* Sample works gallery */
+        .sample-works {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .sample-works h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .sample-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .sample-gallery img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+            width: 300px;
+        }
+
         /* Footer */
         footer {
             background-color: #000;
@@ -153,6 +179,19 @@
                 <h3>Portfolio Website</h3>
                 <p>Designed and developed a modern, responsive portfolio website using React and Laravel. Showcases projects, case studies, and contact integration with clean UI and smooth navigation.</p>
             </div>
+        </div>
+    </section>
+
+    <!-- Sample works section -->
+    <section class="sample-works">
+        <h2>My Sample Works</h2>
+        <div class="sample-gallery">
+            <img src="booking.PNG" alt="Booking Screenshot">
+            <img src="landing.PNG" alt="Landing Page Screenshot">
+            <img src="dashboard.PNG" alt="Dashboard Screenshot">
+            <img src="list.PNG" alt="List Screenshot">
+            <img src="record.PNG" alt="Record Screenshot">
+             <img src="message.PNG" alt="Message Screenshot">
         </div>
     </section>
 
