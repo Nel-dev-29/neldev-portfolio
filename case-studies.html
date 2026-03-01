@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies - Junel's Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #000;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #000;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #1a1a1a;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            color: #4ade80;
+        }
+
+        /* Case study cards */
+        .case-cards {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .case-cards .card {
+            background-color: #111;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            max-width: 500px;
+            text-align: left;
+        }
+
+        .case-cards h3 {
+            color: #4ade80;
+            margin-bottom: 1rem;
+        }
+
+        .case-cards p {
+            color: #ccc;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            padding: 2rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html">Home</a>
+            <a href="case-studies.html">Case Studies</a>
+            <a href="testimonials.html">Testimonials</a>
+            <a href="recent-work.html">Recent Work</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <section class="case-studies" style="padding: 4rem 2rem; text-align: center;">
+        <h2 style="font-size: 3rem; margin-bottom: 2rem;">Case Studies</h2>
+        <div class="case-cards">
+            <div class="card">
+                <h3>Online Appointment System</h3>
+                <p>Built a full-stack appointment booking system using Laravel and React. Implemented authentication, scheduling logic, and admin dashboard.</p>
+            </div>
+            <div class="card">
+                <h3>Portfolio Website</h3>
+                <p>Designed and developed a modern, responsive portfolio website using React and Laravel. Showcases projects, case studies, and contact integration with clean UI and smooth navigation.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Junel. All rights reserved.</p>
+    </footer>
+</body>
+</html>
