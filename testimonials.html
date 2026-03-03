@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testimonials - Junel's Portfolio</title>
+
     <style>
+        /* ====================================
+           GLOBAL STYLES
+        ==================================== */
         * {
             margin: 0;
             padding: 0;
@@ -18,7 +22,9 @@
             line-height: 1.6;
         }
 
-        /* Navigation */
+        /* ====================================
+           NAVIGATION (Same as other pages)
+        ==================================== */
         nav {
             background-color: #000;
             padding: 1.5rem 0;
@@ -34,6 +40,12 @@
             padding: 0 2rem;
             display: flex;
             justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .nav-links {
+            display: flex;
             gap: 3rem;
         }
 
@@ -41,99 +53,150 @@
             color: #fff;
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
             font-size: 1.1rem;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
             color: #4ade80;
         }
 
-        /* Testimonial box */
-        .testimonial-box {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 3rem;
-            border: 1px solid #4ade80;
-            border-radius: 0.5rem;
-            font-style: italic;
-            color: #ccc;
+        .active-link {
+            color: #4ade80;
         }
 
-        /* Footer */
+        .hamburger {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            position: absolute;
+            right: 2rem;
+        }
+
+        /* ====================================
+           TESTIMONIAL SECTION
+        ==================================== */
+        .testimonials {
+            padding: 6rem 2rem;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .testimonials h2 {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .testimonial-box {
+            padding: 3rem;
+            border: 1px solid #4ade80;
+            border-radius: 1rem;
+            font-style: italic;
+            color: #ccc;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            background-color: #0a0a0a;
+        }
+
+        /* ====================================
+           FOOTER
+        ==================================== */
         footer {
             background-color: #000;
-            padding: 2rem;
+            padding: 3rem 2rem;
             text-align: center;
             color: #666;
             font-size: 0.9rem;
+            border-top: 1px solid #1a1a1a;
         }
 
-        /* Responsive tweaks */
+        /* ====================================
+           RESPONSIVE
+        ==================================== */
         @media (max-width: 768px) {
-            nav .nav-container {
-                flex-wrap: wrap;
-                gap: 1rem;
-                padding: 0 1rem;
+
+            .nav-links {
+                position: absolute;
+                top: 80px;
+                right: 0;
+                background-color: #000;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                padding: 2rem 0;
+                gap: 1.5rem;
+                display: none;
+                border-top: 1px solid #1a1a1a;
             }
 
-            nav a {
-                font-size: 1rem;
+            .nav-links.active {
+                display: flex;
             }
 
-            section.testimonials {
-                padding: 2rem 1rem;
+            .hamburger {
+                display: block;
             }
 
-            section.testimonials h2 {
-                font-size: 2.5rem;
-                margin-bottom: 1.5rem;
+            .testimonials h2 {
+                font-size: 2.2rem;
             }
 
             .testimonial-box {
-                max-width: 95%;
-                margin: 1.5rem auto;
                 padding: 2rem;
                 font-size: 1rem;
             }
         }
 
-        /* extra small screens */
-        @media (max-width: 480px) {
-            nav .nav-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            nav a {
-                font-size: 0.9rem;
-            }
-
-            section.testimonials h2 {
-                font-size: 2rem;
-            }
-        }
     </style>
 </head>
+
 <body>
+
+    <!-- ================= NAVIGATION ================= -->
     <nav>
         <div class="nav-container">
-            <a href="index.html">Home</a>
-            <a href="case-studies.html">Case Studies</a>
-            <a href="testimonials.html">Testimonials</a>
-            <a href="recent-work.html">Recent Work</a>
-            <a href="contact.html">Contact</a>
+
+            <div class="hamburger" id="hamburger">☰</div>
+
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="testimonials.html" class="active-link">Testimonials</a>
+                <a href="recent-work.html">Recent Work</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
         </div>
     </nav>
 
-    <section class="testimonials" style="padding: 4rem 2rem; text-align: center;">
-        <h2 style="font-size: 3rem; margin-bottom: 2rem;">Testimonials</h2>
+    <!-- ================= TESTIMONIALS ================= -->
+    <section class="testimonials">
+        <h2>Testimonials</h2>
+
         <div class="testimonial-box">
-           "My goal in technology is driven by a commitment to innovation and purposeful problem-solving. I view every project as an opportunity to bridge the gap between complex digital solutions and human-centric experiences. I am dedicated to mastering the tools of tomorrow—not just to build applications, but to create a meaningful impact that empowers users and pushes the boundaries of what’s possible in the tech industry."
+            "My goal in technology is driven by a commitment to innovation and purposeful problem-solving. 
+            I view every project as an opportunity to bridge the gap between complex digital solutions 
+            and human-centric experiences. I am dedicated to mastering the tools of tomorrow—not just 
+            to build applications, but to create a meaningful impact that empowers users and pushes 
+            the boundaries of what’s possible in the tech industry."
         </div>
     </section>
 
+    <!-- ================= FOOTER ================= -->
     <footer>
         <p>&copy; 2026 Junel. All rights reserved.</p>
     </footer>
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("navLinks");
+
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+    </script>
+
 </body>
 </html>
