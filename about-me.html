@@ -1,169 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Me - Junel's Portfolio</title>
-    <style>
-        /* GLOBAL STYLES */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Me - Junel's Portfolio</title>
+  <style>
+    /* GLOBAL STYLES */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #000;
-            color: #fff;
-            line-height: 1.6;
-        }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #000;
+      color: #fff;
+      line-height: 1.6;
+    }
 
-        /* NAVIGATION */
-        nav {
-            background-color: #000;
-            padding: 1.5rem 0;
-            border-bottom: 1px solid #1a1a1a;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+    /* NAVIGATION */
+    nav {
+      background-color: #000;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid #1a1a1a;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 3rem;
-        }
+    .nav-links {
+      display: flex;
+      gap: 3rem;
+    }
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1rem;
-            transition: color 0.3s ease;
-        }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
 
-        nav a:hover {
-            color: #4ade80;
-        }
+    nav a:hover {
+      color: #4ade80;
+    }
 
-        .active-link {
-            color: #4ade80;
-        }
+    .active-link {
+      color: #4ade80;
+    }
 
-        .hamburger {
-            display: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-            position: absolute;
-            right: 2rem;
-        }
+    .hamburger {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      position: absolute;
+      right: 2rem;
+    }
 
-        /* ABOUT ME SECTION */
-        section.about-me {
-            padding: 6rem 2rem;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-        }
+    /* ABOUT ME SECTION */
+    .about-content {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      max-width: 900px;
+      margin: 6rem auto 4rem auto;
+      padding: 0 2rem;
+    }
 
-        section.about-me h2 {
-            font-size: 3rem;
-            margin-bottom: 2rem;
-            letter-spacing: -1px;
-        }
+    .about-content img {
+      width: 200px;
+      height: auto;
+      border-radius: 1rem;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
 
-        section.about-me p {
-            font-size: 1.2rem;
-            color: #ccc;
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
+    .about-text h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      letter-spacing: -1px;
+    }
 
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .nav-links {
-                position: absolute;
-                top: 80px;
-                right: 0;
-                background-color: #000;
-                flex-direction: column;
-                width: 100%;
-                text-align: center;
-                padding: 2rem 0;
-                gap: 1.5rem;
-                display: none;
-                border-top: 1px solid #1a1a1a;
-            }
+    .about-text p {
+      font-size: 1.2rem;
+      color: #ccc;
+      line-height: 1.8;
+      text-align: justify;
+    }
 
-            .nav-links.active {
-                display: flex;
-            }
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background-color: #000;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding: 2rem 0;
+        gap: 1.5rem;
+        display: none;
+        border-top: 1px solid #1a1a1a;
+      }
 
-            .hamburger {
-                display: block;
-            }
+      .nav-links.active {
+        display: flex;
+      }
 
-            section.about-me h2 {
-                font-size: 2.2rem;
-            }
+      .hamburger {
+        display: block;
+      }
 
-            section.about-me p {
-                font-size: 1rem;
-                padding: 0 1rem;
-            }
-        }
-    </style>
+      .about-content {
+        flex-direction: column;
+        padding: 0 1rem;
+      }
+
+      .about-content img {
+        width: 150px;
+        margin-bottom: 1.5rem;
+      }
+
+      .about-text h2 {
+        font-size: 2.2rem;
+      }
+
+      .about-text p {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- NAVIGATION -->
-    <nav>
-        <div class="nav-container">
-            <div class="hamburger" id="hamburger">☰</div>
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-container">
+      <div class="hamburger" id="hamburger">☰</div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">HOME</a>
+        <a href="case-studies.html">CASE STUDIES</a>
+        <a href="testimonials.html">TESTIMONIALS</a>
+        <a href="recent-work.html">RECENT WORKS</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="about-me.html" class="active-link">ABOUT ME</a>
+      </div>
+    </div>
+  </nav>
 
-            <div class="nav-links" id="navLinks">
-                <a href="index.html">HOME</a>
-                <a href="case-studies.html">CASE STUDIES</a>
-                <a href="testimonials.html">TESTIMONIALS</a>
-                <a href="recent-work.html">RECENT WORKS</a>
-                <a href="contact.html">CONTACT</a>
-                <a href="about-me.html" class="active-link">ABOUT ME</a> 
-            </div>
-        </div>
-    </nav>
-
-    <!-- ABOUT ME SECTION -->
-    <section class="about-me">
+  <!-- ABOUT ME SECTION -->
+  <section class="about-me">
+    <div class="about-content">
+      <img src="path/to/your-image.jpg" alt="Junel Micabalo" />
+      <div class="about-text">
         <h2>About Me</h2>
         <p>
-            Hi! I’m <strong>Junel Micabalo</strong>, a 24-year-old aspiring web developer from 
-            <strong>Mambuaya, Cagayan de Oro City</strong>. Currently, I’m pursuing a 
-            <strong>Bachelor of Science in Information Technology</strong> at 
-            <strong>Tagoloan Community College</strong>. I’m passionate about crafting clean and 
-            efficient digital solutions that make a real difference. My journey in tech is fueled by curiosity and a drive to constantly learn and grow.
+          Hi! I’m <strong>Junel Micabalo</strong>, a 24-year-old aspiring web developer from 
+          <strong>Mambuaya, Cagayan de Oro City</strong>. Currently, I’m pursuing a 
+          <strong>Bachelor of Science in Information Technology</strong> at 
+          <strong>Tagoloan Community College</strong>. I’m passionate about crafting clean and 
+          efficient digital solutions that make a real difference. My journey in tech is fueled by curiosity and a drive to constantly learn and grow.
         </p>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- JAVASCRIPT FOR HAMBURGER MENU -->
-    <script>
-        const hamburger = document.getElementById("hamburger");
-        const navLinks = document.getElementById("navLinks");
+  <!-- JAVASCRIPT FOR HAMBURGER MENU -->
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("navLinks");
 
-        hamburger.addEventListener("click", () => {
-            navLinks.classList.toggle("active");
-        });
-    </script>
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
 
 </body>
 </html>
