@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Junel's Portfolio</title>
     <style>
+        /* Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -12,10 +13,11 @@
         }
 
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #000;
             color: #fff;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         /* Navigation */
@@ -42,138 +44,163 @@
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 1.1rem;
         }
 
         nav a:hover {
             color: #4ade80;
         }
 
-        /* Contact Section */
-        .contact {
+        /* Contact Section Styles */
+        section.contact {
             padding: 6rem 2rem;
             text-align: center;
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
-        .contact h2 {
-            font-size: 3rem;
+        section.contact h2 {
+            font-size: 3.5rem;
             margin-bottom: 1rem;
+            font-weight: 700;
             letter-spacing: -1px;
         }
 
-        .contact p {
+        section.contact p.subtitle {
             color: #888;
-            margin-bottom: 3rem;
+            font-size: 1.1rem;
+            margin-bottom: 4rem;
         }
 
-        /* Contact Items Grid */
+        /* Contact Grid - Professional Cards */
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
+            justify-content: center;
         }
 
         .contact-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 2rem;
-            background: #0a0a0a;
+            padding: 2.5rem 1.5rem;
+            background-color: #0a0a0a;
             border: 1px solid #1a1a1a;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            text-decoration: none; /* In case you want to make them links later */
+            border-radius: 16px;
+            text-decoration: none; /* Removes underline from links */
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            color: inherit;
         }
 
         .contact-item:hover {
             border-color: #4ade80;
-            transform: translateY(-5px);
-            background: #111;
+            transform: translateY(-10px);
+            background-color: #111;
+            box-shadow: 0 15px 30px rgba(74, 222, 128, 0.1);
         }
 
         .contact-item img {
-            width: 45px;
-            height: 45px;
-            margin-bottom: 1.2rem;
+            width: 50px;
+            height: 50px;
+            margin-bottom: 1.5rem;
             object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover img {
+            transform: scale(1.1);
         }
 
         .contact-item .label {
             font-size: 0.8rem;
             color: #4ade80;
             text-transform: uppercase;
-            font-weight: bold;
-            letter-spacing: 1px;
+            font-weight: 700;
+            letter-spacing: 2px;
             margin-bottom: 0.5rem;
         }
 
         .contact-item .value {
-            font-size: 1rem;
-            color: #fff;
+            font-size: 1.1rem;
+            color: #eee;
             word-break: break-all;
         }
 
         /* Footer */
         footer {
-            margin-top: 4rem;
-            padding: 2rem;
+            background-color: #000;
+            padding: 3rem 2rem;
             text-align: center;
-            color: #444;
-            font-size: 0.85rem;
+            color: #555;
+            font-size: 0.9rem;
             border-top: 1px solid #1a1a1a;
+            margin-top: 4rem;
         }
 
-        /* Responsive */
+        /* Responsive Tweaks */
         @media (max-width: 768px) {
-            .nav-container { gap: 1.5rem; }
-            .contact h2 { font-size: 2.5rem; }
-            .contact-grid { grid-template-columns: 1fr; }
+            nav .nav-container {
+                gap: 1.5rem;
+                padding: 0 1rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            section.contact h2 {
+                font-size: 2.5rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
         }
     </style>
 </head>
 <body>
+
     <nav>
         <div class="nav-container">
             <a href="index.html">Home</a>
             <a href="case-studies.html">Case Studies</a>
             <a href="testimonials.html">Testimonials</a>
             <a href="recent-work.html">Recent Work</a>
-            <a href="contact.html">Contact</a>
+            <a href="contact.html" style="color: #4ade80;">Contact</a>
         </div>
     </nav>
 
     <section class="contact">
-        <h2>Get in Touch</h2>
-        <p>Feel free to reach out for collaborations or just a friendly hello.</p>
+        <h2>Contact</h2>
+        <p class="subtitle">Let's work together. Connect with me on any of these platforms.</p>
         
         <div class="contact-grid">
-            <div class="contact-item">
+            <a href="https://www.facebook.com/nel2902" target="_blank" rel="noopener noreferrer" class="contact-item">
                 <img src="facebook.png" alt="Facebook">
                 <span class="label">Facebook</span>
                 <span class="value">Junel Micabalo</span>
-            </div>
+            </a>
 
-            <div class="contact-item">
+            <a href="mailto:junelmicabalo19@gmail.com" target="_blank" class="contact-item">
                 <img src="gmail.png" alt="Gmail">
-                <span class="label">Email</span>
+                <span class="label">Gmail</span>
                 <span class="value">junelmicabalo19@gmail.com</span>
-            </div>
+            </a>
 
-            <div class="contact-item">
+            <a href="https://www.instagram.com/nel.micc" target="_blank" rel="noopener noreferrer" class="contact-item">
                 <img src="instagram.png" alt="Instagram">
                 <span class="label">Instagram</span>
                 <span class="value">nel.micc</span>
-            </div>
+            </a>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2026 Junel. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
