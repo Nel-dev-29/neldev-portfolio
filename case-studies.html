@@ -12,7 +12,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background-color: #000;
             color: #fff;
             line-height: 1.6;
@@ -42,118 +42,121 @@
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         nav a:hover {
             color: #4ade80;
         }
 
-        /* Case study cards */
-        .case-cards {
-            display: flex;
-            justify-content: center;
+        /* Case Studies Section */
+        section.case-studies {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        section.case-studies h2 {
+            font-size: 3.5rem;
+            margin-bottom: 3rem;
+            letter-spacing: -1px;
+        }
+
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 2rem;
         }
 
-        .case-cards .card {
-            background-color: #111;
-            padding: 2rem;
-            border-radius: 0.5rem;
-            max-width: 500px;
+        .card {
+            background-color: #0a0a0a;
+            padding: 3rem 2rem;
+            border-radius: 1.5rem;
             text-align: left;
+            border: 1px solid #1a1a1a;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
-        .case-cards h3 {
+        .card:hover {
+            border-color: #4ade80;
+            transform: translateY(-10px);
+            background-color: #111;
+        }
+
+        .card .tag {
             color: #4ade80;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
             margin-bottom: 1rem;
         }
 
-        .case-cards p {
-            color: #ccc;
+        .card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #fff;
         }
 
-        /* Sample works gallery */
+        .card p {
+            color: #aaa;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        /* Sample Works Gallery */
         .sample-works {
-            padding: 4rem 2rem;
+            background-color: #050505;
+            padding: 6rem 2rem;
             text-align: center;
         }
 
         .sample-works h2 {
             font-size: 3rem;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
         }
 
         .sample-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .sample-gallery img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 0.5rem;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.5);
-            width: 300px;
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 1rem;
+            border: 1px solid #1a1a1a;
+            transition: opacity 0.3s ease;
+            cursor: pointer;
+        }
+
+        .sample-gallery img:hover {
+            opacity: 0.7;
         }
 
         /* Footer */
         footer {
-            background-color: #000;
-            padding: 2rem;
+            padding: 4rem 2rem;
             text-align: center;
-            color: #666;
-            font-size: 0.9rem;
+            color: #444;
+            border-top: 1px solid #1a1a1a;
         }
 
-        /* Responsive tweaks */
+        /* Responsive */
         @media (max-width: 768px) {
-            nav .nav-container {
-                flex-wrap: wrap;
-                gap: 1rem;
-                padding: 0 1rem;
-            }
-
-            nav a {
-                font-size: 1rem;
-            }
-
-            section.case-studies {
-                padding: 2rem 1rem;
-            }
-
-            section.case-studies h2 {
-                font-size: 2.5rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .case-cards {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .case-cards .card {
-                max-width: 100%;
-            }
-        }
-
-        /* extra small screens */
-        @media (max-width: 480px) {
-            nav .nav-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            nav a {
-                font-size: 0.9rem;
-            }
-
-            section.case-studies h2 {
-                font-size: 2rem;
-            }
+            section.case-studies h2 { font-size: 2.5rem; }
+            .case-grid { grid-template-columns: 1fr; }
+            .nav-container { gap: 1.5rem; }
         }
     </style>
 </head>
@@ -161,37 +164,45 @@
     <nav>
         <div class="nav-container">
             <a href="index.html">Home</a>
-            <a href="case-studies.html">Case Studies</a>
+            <a href="case-studies.html" style="color: #4ade80;">Case Studies</a>
             <a href="testimonials.html">Testimonials</a>
             <a href="recent-work.html">Recent Work</a>
             <a href="contact.html">Contact</a>
         </div>
     </nav>
 
-    <section class="case-studies" style="padding: 4rem 2rem; text-align: center;">
-        <h2 style="font-size: 3rem; margin-bottom: 2rem;">Case Studies</h2>
-        <div class="case-cards">
+    <section class="case-studies">
+        <h2>Case Studies</h2>
+        <div class="case-grid">
             <div class="card">
-                <h3>Online Appointment System</h3>
-                <p>Built a full-stack appointment booking system using Laravel and React. Implemented authentication, scheduling logic, and admin dashboard.</p>
+                <span class="tag">Healthcare Tech</span>
+                <h3>Patient Record Management System</h3>
+                <p>Developed a secure and centralized system for digitizing medical records. Features include automated patient history tracking, data encryption for privacy, and an intuitive interface for healthcare providers to manage consultations and prescriptions efficiently.</p>
             </div>
+
             <div class="card">
+                <span class="tag">Booking Solutions</span>
+                <h3>Online Appointment System</h3>
+                <p>A full-stack booking engine built with Laravel and React. Optimized for high-traffic scheduling, featuring real-time availability updates, automated email notifications, and a comprehensive admin dashboard for management.</p>
+            </div>
+
+            <div class="card">
+                <span class="tag">Personal Branding</span>
                 <h3>Portfolio Website</h3>
-                <p>Designed and developed a modern, responsive portfolio website using React and Laravel. Showcases projects, case studies, and contact integration with clean UI and smooth navigation.</p>
+                <p>A high-performance personal brand site focused on user experience. Implemented with a mobile-first approach, ensuring seamless navigation across devices while showcasing technical projects through a clean, minimalist UI.</p>
             </div>
         </div>
     </section>
 
-    <!-- Sample works section -->
     <section class="sample-works">
-        <h2>My Sample Works</h2>
+        <h2>Visual Showcase</h2>
         <div class="sample-gallery">
-            <img src="booking.PNG" alt="Booking Screenshot">
-            <img src="landing.PNG" alt="Landing Page Screenshot">
-            <img src="dashboard.PNG" alt="Dashboard Screenshot">
-            <img src="list.PNG" alt="List Screenshot">
-            <img src="record.PNG" alt="Record Screenshot">
-             <img src="message.PNG" alt="Message Screenshot">
+            <img src="booking.PNG" alt="Booking Screenshot" onerror="this.src='https://via.placeholder.com/400x300/111/4ade80?text=Booking+System'">
+            <img src="landing.PNG" alt="Landing Page Screenshot" onerror="this.src='https://via.placeholder.com/400x300/111/4ade80?text=Landing+Page'">
+            <img src="dashboard.PNG" alt="Dashboard Screenshot" onerror="this.src='https://via.placeholder.com/400x300/111/4ade80?text=Admin+Dashboard'">
+            <img src="list.PNG" alt="List Screenshot" onerror="this.src='https://via.placeholder.com/400x300/111/4ade80?text=Patient+List'">
+            <img src="record.PNG" alt="Record Screenshot" onerror="this.src='https://via.placeholder.com/400x300/111/4ade80?text=Medical+Record'">
+            <img src="message.PNG" alt="Message Screenshot" onerror="this.src='https://via.placeholder.com/400x300/111/4ade80?text=Communication+Module'">
         </div>
     </section>
 
