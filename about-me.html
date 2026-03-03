@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Me - Junel's Portfolio</title>
     <style>
+        /* GLOBAL STYLES */
         * {
             margin: 0;
             padding: 0;
@@ -16,12 +17,10 @@
             background-color: #000;
             color: #fff;
             line-height: 1.6;
-            overflow-x: hidden;
-            padding: 2rem;
-            max-width: 900px;
-            margin: 0 auto;
         }
- nav {
+
+        /* NAVIGATION */
+        nav {
             background-color: #000;
             padding: 1.5rem 0;
             border-bottom: 1px solid #1a1a1a;
@@ -55,13 +54,10 @@
 
         nav a:hover {
             color: #4ade80;
-
-      
         }
 
         .active-link {
             color: #4ade80;
-        }    
         }
 
         .hamburger {
@@ -72,9 +68,12 @@
             right: 2rem;
         }
 
+        /* ABOUT ME SECTION */
         section.about-me {
-            padding: 4rem 1rem;
+            padding: 6rem 2rem;
             text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         section.about-me h2 {
@@ -91,47 +90,60 @@
             line-height: 1.8;
         }
 
-        /* Responsive */
+        /* RESPONSIVE */
         @media (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                top: 80px;
+                right: 0;
+                background-color: #000;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                padding: 2rem 0;
+                gap: 1.5rem;
+                display: none;
+                border-top: 1px solid #1a1a1a;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
             section.about-me h2 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
 
             section.about-me p {
                 font-size: 1rem;
                 padding: 0 1rem;
             }
-
-            .nav-container {
-                gap: 1.5rem;
-                padding: 0 1rem;
-            }
-
-            nav a {
-                font-size: 0.95rem;
-            }
         }
     </style>
 </head>
 <body>
 
-   <nav>
+    <!-- NAVIGATION -->
+    <nav>
         <div class="nav-container">
-
             <div class="hamburger" id="hamburger">☰</div>
 
             <div class="nav-links" id="navLinks">
                 <a href="index.html">HOME</a>
                 <a href="case-studies.html">CASE STUDIES</a>
-                <a href="testimonials.html" class="active-link">TESTIMONIALS</a>
+                <a href="testimonials.html">TESTIMONIALS</a>
                 <a href="recent-work.html">RECENT WORKS</a>
                 <a href="contact.html">CONTACT</a>
-                <a href="about-me.html" class="active">ABOUT ME</a> 
+                <a href="about-me.html" class="active-link">ABOUT ME</a> 
             </div>
-
         </div>
     </nav>
 
+    <!-- ABOUT ME SECTION -->
     <section class="about-me">
         <h2>About Me</h2>
         <p>
@@ -142,6 +154,16 @@
             efficient digital solutions that make a real difference. My journey in tech is fueled by curiosity and a drive to constantly learn and grow.
         </p>
     </section>
+
+    <!-- JAVASCRIPT FOR HAMBURGER MENU -->
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("navLinks");
+
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+    </script>
 
 </body>
 </html>
