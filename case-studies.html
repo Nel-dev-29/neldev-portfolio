@@ -3,211 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Case Studies - Junel's Portfolio</title>
+    <title>Case Studies - Junel</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* [Copy the Navigation CSS from index.html above] */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: #000; color: #fff; line-height: 1.6; }
+        nav { background-color: #000; padding: 1.5rem 0; border-bottom: 1px solid #1a1a1a; position: sticky; top: 0; z-index: 1000; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo-text { font-weight: 700; color: #4ade80; font-size: 1.5rem; text-decoration: none; }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a { color: #fff; text-decoration: none; transition: 0.3s; }
+        .nav-links a.active { color: #4ade80; }
+        .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 6px; }
+        .hamburger span { width: 28px; height: 3px; background-color: #fff; }
 
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #000;
-            color: #fff;
-            line-height: 1.6;
-        }
+        .case-studies { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; text-align: center; }
+        .case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .card { background: #0a0a0a; padding: 2.5rem; border-radius: 1.5rem; border: 1px solid #1a1a1a; text-align: left; transition: 0.3s; }
+        .card:hover { border-color: #4ade80; transform: translateY(-10px); }
+        .tag { color: #4ade80; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
+        .card h3 { margin: 1rem 0; font-size: 1.5rem; }
+        .card p { color: #aaa; font-size: 0.95rem; }
 
-        /* Navigation */
-        nav {
-            background-color: #000;
-            padding: 1.5rem 0;
-            border-bottom: 1px solid #1a1a1a;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        nav a:hover {
-            color: #4ade80;
-        }
-
-        /* Case Studies Section */
-        section.case-studies {
-            padding: 6rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        section.case-studies h2 {
-            font-size: 3.5rem;
-            margin-bottom: 3rem;
-            letter-spacing: -1px;
-        }
-
-        .case-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background-color: #0a0a0a;
-            padding: 3rem 2rem;
-            border-radius: 1.5rem;
-            text-align: left;
-            border: 1px solid #1a1a1a;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card:hover {
-            border-color: #4ade80;
-            transform: translateY(-10px);
-            background-color: #111;
-        }
-
-        .card .tag {
-            color: #4ade80;
-            font-size: 0.75rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
-        }
-
-        .card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-
-        .card p {
-            color: #aaa;
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
-        }
-
-        /* Sample Works Gallery */
-        .sample-works {
-            background-color: #050505;
-            padding: 6rem 2rem;
-            text-align: center;
-        }
-
-        .sample-works h2 {
-            font-size: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .sample-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .sample-gallery img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 1rem;
-            border: 1px solid #1a1a1a;
-            transition: opacity 0.3s ease;
-            cursor: pointer;
-        }
-
-        .sample-gallery img:hover {
-            opacity: 0.7;
-        }
-
-        /* Footer */
-        footer {
-            padding: 4rem 2rem;
-            text-align: center;
-            color: #444;
-            border-top: 1px solid #1a1a1a;
-        }
-
-        /* Responsive */
         @media (max-width: 768px) {
-            section.case-studies h2 { font-size: 2.5rem; }
-            .case-grid { grid-template-columns: 1fr; }
-            .nav-container { gap: 1.5rem; }
+            .hamburger { display: flex; }
+            .nav-links { position: fixed; left: -100%; top: 75px; flex-direction: column; background: #000; width: 100%; text-align: center; transition: 0.4s; padding: 2rem 0; }
+            .nav-links.active { left: 0; }
         }
     </style>
 </head>
 <body>
     <nav>
         <div class="nav-container">
-            <a href="index.html">Home</a>
-            <a href="case-studies.html" style="color: #4ade80;">Case Studies</a>
-            <a href="testimonials.html">Testimonials</a>
-            <a href="recent-work.html">Recent Work</a>
-            <a href="contact.html">Contact</a>
+            <a href="index.html" class="logo-text">JUNEL.</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="case-studies.html" class="active">Case Studies</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="recent-work.html">Recent Work</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
         </div>
     </nav>
 
     <section class="case-studies">
-        <h2>Case Studies</h2>
+        <h2 style="font-size: 3rem;">Case Studies</h2>
         <div class="case-grid">
             <div class="card">
                 <span class="tag">Healthcare Tech</span>
-                <h3>Patient Record Management System</h3>
-                <p>Developed a secure and centralized system for digitizing medical records. Features include automated patient history tracking, data encryption for privacy, and an intuitive interface for healthcare providers to manage consultations and prescriptions efficiently.</p>
+                <h3>Patient Record System</h3>
+                <p>A secure, centralized system for medical records. Features automated patient history and data encryption for privacy.</p>
             </div>
-
             <div class="card">
                 <span class="tag">Booking Solutions</span>
-                <h3>Online Appointment System</h3>
-                <p>A full-stack booking engine built with Laravel and React. Optimized for high-traffic scheduling, featuring real-time availability updates, automated email notifications, and a comprehensive admin dashboard for management.</p>
+                <h3>Appointment System</h3>
+                <p>Full-stack booking engine with real-time updates and an automated notification system.</p>
             </div>
-
             <div class="card">
-                <span class="tag">Personal Branding</span>
+                <span class="tag">UX Design</span>
                 <h3>Portfolio Website</h3>
-                <p>A high-performance personal brand site focused on user experience. Implemented with a mobile-first approach, ensuring seamless navigation across devices while showcasing technical projects through a clean, minimalist UI.</p>
+                <p>High-performance personal branding site focused on clean UI and seamless mobile navigation.</p>
             </div>
         </div>
     </section>
 
-    <section class="sample-works">
-        <h2>Visual Showcase</h2>
-        <div class="sample-gallery">
-            <img src="booking.PNG" alt="Booking Screenshot" onerror="this.src='https://via.placeholder.com/400x300/111/4ade80?text=Booking+System'">
-            <img src="landing.PNG" alt="Landing Page Screenshot" onerror="this.src='https://via.placeholder.com/400x300/111/4ade80?text=Landing+Page'">
-            <img src="dashboard.PNG" alt="Dashboard Screenshot" onerror="this.src='https://via.placeholder.com/400x300/111/4ade80?text=Admin+Dashboard'">
-            <img src="list.PNG" alt="List Screenshot" onerror="this.src='https://via.placeholder.com/400x300/111/4ade80?text=Patient+List'">
-            <img src="record.PNG" alt="Record Screenshot" onerror="this.src='https://via.placeholder.com/400x300/111/4ade80?text=Medical+Record'">
-            <img src="message.PNG" alt="Message Screenshot" onerror="this.src='https://via.placeholder.com/400x300/111/4ade80?text=Communication+Module'">
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Junel. All rights reserved.</p>
-    </footer>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        hamburger.onclick = () => navLinks.classList.toggle('active');
+    </script>
 </body>
 </html>
