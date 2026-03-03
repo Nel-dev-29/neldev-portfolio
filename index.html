@@ -6,9 +6,9 @@
     <title>Junel - Web Developer Portfolio</title>
 
     <style>
-        /* =========================
+        /* ====================================
            GLOBAL STYLES
-        ========================== */
+        ==================================== */
         * {
             margin: 0;
             padding: 0;
@@ -28,9 +28,9 @@
             background-color: #1a1a1a;
         }
 
-        /* =========================
+        /* ====================================
            NAVIGATION
-        ========================== */
+        ==================================== */
         nav {
             background-color: #000;
             padding: 1.5rem 0;
@@ -45,13 +45,9 @@
             margin: 0 auto;
             padding: 0 2rem;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-        }
-
-        .logo-text {
-            font-weight: 600;
-            font-size: 1.2rem;
+            position: relative;
         }
 
         .nav-links {
@@ -75,11 +71,13 @@
             display: none;
             font-size: 1.8rem;
             cursor: pointer;
+            position: absolute;
+            right: 2rem;
         }
 
-        /* =========================
+        /* ====================================
            HERO SECTION
-        ========================== */
+        ==================================== */
         .hero {
             max-width: 1200px;
             margin: 0 auto;
@@ -143,9 +141,9 @@
             object-position: top center;
         }
 
-        /* =========================
+        /* ====================================
            WORKED WITH SECTION
-        ========================== */
+        ==================================== */
         .worked-with {
             background-color: #0a0a0a;
             padding: 3rem 2rem;
@@ -180,9 +178,9 @@
             object-fit: contain;
         }
 
-        /* =========================
+        /* ====================================
            FOOTER
-        ========================== */
+        ==================================== */
         footer {
             background-color: #000;
             padding: 2rem;
@@ -191,9 +189,9 @@
             font-size: 0.9rem;
         }
 
-        /* =========================
+        /* ====================================
            RESPONSIVE DESIGN
-        ========================== */
+        ==================================== */
         @media (max-width: 768px) {
 
             .nav-links {
@@ -249,12 +247,9 @@
 
 <body>
 
-    <!-- =========================
-         NAVIGATION
-    ========================== -->
+    <!-- ================= NAVIGATION ================= -->
     <nav>
-     
-           
+        <div class="nav-container">
 
             <div class="hamburger" id="hamburger">
                 ☰
@@ -267,18 +262,21 @@
                 <a href="recent-work.html">Recent Work</a>
                 <a href="contact.html">Contact</a>
             </div>
+
         </div>
     </nav>
 
     <hr class="section-separator">
 
-    <!-- =========================
-         HERO SECTION
-    ========================== -->
+    <!-- ================= HERO ================= -->
     <section class="hero">
         <div class="hero-content">
             <h1>Hi, I'm Junel<br>Web Developer</h1>
-            <p>I build modern web applications using React and Laravel. I focus on clean design, scalable architecture, and creating systems that solve real-world problems.</p>
+            <p>
+                I build modern web applications using React and Laravel. 
+                I focus on clean design, scalable architecture, and creating 
+                systems that solve real-world problems.
+            </p>
             <button class="cta-button" onclick="window.location.href='contact.html'">
                 Let's get started >
             </button>
@@ -291,10 +289,8 @@
         </div>
     </section>
 
-    <!-- =========================
-         WORKED WITH
-    ========================== -->
-    <div class="worked-with">
+    <!-- ================= WORKED WITH ================= -->
+    <section class="worked-with">
         <div class="worked-with-container">
             <h2>Worked With</h2>
             <div class="logos-container">
@@ -304,19 +300,15 @@
                 <img class="logo" src="Figma.png" alt="Figma">
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
+    <!-- ================= FOOTER ================= -->
     <footer>
         <p>&copy; 2026 Junel. All rights reserved.</p>
         <p>College of Information Technology.</p>
     </footer>
 
-    <!-- =========================
-         JAVASCRIPT
-    ========================== -->
+    <!-- ================= JAVASCRIPT ================= -->
     <script>
         const hamburger = document.getElementById("hamburger");
         const navLinks = document.getElementById("navLinks");
@@ -328,5 +320,3 @@
 
 </body>
 </html>
-
-
