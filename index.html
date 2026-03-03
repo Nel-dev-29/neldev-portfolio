@@ -4,18 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Junel - Web Developer Portfolio</title>
+
     <style>
+        /* =========================
+           GLOBAL STYLES
+        ========================== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        hr.section-separator {
-            border: none;
-            height: 1px;
-            background-color: #1a1a1a;
-            margin: 0;
         }
 
         body {
@@ -25,7 +22,15 @@
             line-height: 1.6;
         }
 
-        /* Navigation */
+        hr.section-separator {
+            border: none;
+            height: 1px;
+            background-color: #1a1a1a;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================== */
         nav {
             background-color: #000;
             padding: 1.5rem 0;
@@ -40,7 +45,17 @@
             margin: 0 auto;
             padding: 0 2rem;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
             gap: 3rem;
         }
 
@@ -48,15 +63,23 @@
             color: #fff;
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
             font-size: 1.1rem;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
             color: #4ade80;
         }
 
-        /* Hero Section */
+        .hamburger {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* =========================
+           HERO SECTION
+        ========================== */
         .hero {
             max-width: 1200px;
             margin: 0 auto;
@@ -70,7 +93,6 @@
 
         .hero-content h1 {
             font-size: 3.5rem;
-            font-weight: 700;
             margin-bottom: 1.5rem;
             line-height: 1.2;
         }
@@ -80,7 +102,6 @@
             color: #ccc;
             margin-bottom: 2rem;
             line-height: 1.8;
-            max-width: 90%;
         }
 
         .cta-button {
@@ -92,7 +113,7 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
-            transition: all 0.3s ease;
+            transition: 0.3s ease;
             border: none;
             cursor: pointer;
         }
@@ -105,7 +126,6 @@
         .hero-image {
             display: flex;
             justify-content: center;
-            align-items: center;
         }
 
         .profile-circle {
@@ -114,7 +134,6 @@
             border-radius: 50%;
             border: 2px solid #333;
             overflow: hidden;
-            object-fit: cover;
         }
 
         .profile-circle img {
@@ -124,7 +143,9 @@
             object-position: top center;
         }
 
-        /* Worked With Section */
+        /* =========================
+           WORKED WITH SECTION
+        ========================== */
         .worked-with {
             background-color: #0a0a0a;
             padding: 3rem 2rem;
@@ -139,7 +160,7 @@
         }
 
         .worked-with h2 {
-            font-size: 1.1rem;
+            font-size: 1rem;
             letter-spacing: 2px;
             color: #999;
             margin-bottom: 2rem;
@@ -151,7 +172,6 @@
             justify-content: center;
             gap: 3rem;
             flex-wrap: wrap;
-            align-items: center;
         }
 
         .logo {
@@ -160,7 +180,9 @@
             object-fit: contain;
         }
 
-        /* Footer */
+        /* =========================
+           FOOTER
+        ========================== */
         footer {
             background-color: #000;
             padding: 2rem;
@@ -169,29 +191,42 @@
             font-size: 0.9rem;
         }
 
-        /* Responsive Design */
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================== */
         @media (max-width: 768px) {
+
+            .nav-links {
+                position: absolute;
+                top: 80px;
+                right: 0;
+                background-color: #000;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                padding: 2rem 0;
+                gap: 1.5rem;
+                display: none;
+                border-top: 1px solid #1a1a1a;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
             .hero {
                 grid-template-columns: 1fr;
                 padding: 2rem 1rem;
                 min-height: auto;
+                text-align: center;
             }
 
             .hero-content h1 {
                 font-size: 2.5rem;
-            }
-
-            .hero-content p {
-                max-width: 100%;
-            }
-
-            .nav-container {
-                gap: 1.5rem;
-                font-size: 0.9rem;
-            }
-
-            nav a {
-                font-size: 0.95rem;
             }
 
             .profile-circle {
@@ -207,48 +242,48 @@
                 width: 45px;
                 height: 45px;
             }
-
-            .worked-with h2 {
-                font-size: 1rem;
-            }
         }
 
-        /* extra small screens */
-        @media (max-width: 480px) {
-            nav .nav-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            nav a {
-                font-size: 0.9rem;
-            }
-
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-        }
     </style>
 </head>
+
 <body>
-    <!-- Navigation -->
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
     <nav>
         <div class="nav-container">
-            <a href="index.html">Home</a>
-            <a href="case-studies.html">Case Studies</a>
-            <a href="testimonials.html">Testimonials</a>
-            <a href="recent-work.html">Recent Work</a>
-            <a href="contact.html">Contact</a>
+            <div class="logo-text">Junel</div>
+
+            <div class="hamburger" id="hamburger">
+                ☰
+            </div>
+
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="testimonials.html">Testimonials</a>
+                <a href="recent-work.html">Recent Work</a>
+                <a href="contact.html">Contact</a>
+            </div>
         </div>
     </nav>
+
     <hr class="section-separator">
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+    <section class="hero">
         <div class="hero-content">
-            <h1>Hi, I'am Junel<br>Web Developer</h1>
+            <h1>Hi, I'm Junel<br>Web Developer</h1>
             <p>I build modern web applications using React and Laravel. I focus on clean design, scalable architecture, and creating systems that solve real-world problems.</p>
-            <button class="cta-button" onclick="window.location.href='contact.html'">Let's get started ></button>
+            <button class="cta-button" onclick="window.location.href='contact.html'">
+                Let's get started >
+            </button>
         </div>
+
         <div class="hero-image">
             <div class="profile-circle">
                 <img src="junel.jpg" alt="Junel Profile">
@@ -256,7 +291,9 @@
         </div>
     </section>
 
-    <!-- Worked With Section -->
+    <!-- =========================
+         WORKED WITH
+    ========================== -->
     <div class="worked-with">
         <div class="worked-with-container">
             <h2>Worked With</h2>
@@ -269,12 +306,25 @@
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- =========================
+         FOOTER
+    ========================== -->
     <footer>
         <p>&copy; 2026 Junel. All rights reserved.</p>
         <p>College of Information Technology.</p>
     </footer>
 
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("navLinks");
+
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+    </script>
 
 </body>
 </html>
