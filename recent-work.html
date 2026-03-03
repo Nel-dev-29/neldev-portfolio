@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recent Work - Junel's Portfolio</title>
+
     <style>
+        /* ====================================
+           GLOBAL STYLES
+        ==================================== */
         * {
             margin: 0;
             padding: 0;
@@ -18,7 +22,9 @@
             line-height: 1.6;
         }
 
-        /* Navigation */
+        /* ====================================
+           NAVIGATION (Consistent Across Pages)
+        ==================================== */
         nav {
             background-color: #000;
             padding: 1.5rem 0;
@@ -34,6 +40,12 @@
             padding: 0 2rem;
             display: flex;
             justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .nav-links {
+            display: flex;
             gap: 3rem;
         }
 
@@ -41,15 +53,29 @@
             color: #fff;
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
             font-size: 1.1rem;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
             color: #4ade80;
         }
 
-        /* Recent Work Section */
+        .active-link {
+            color: #4ade80;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            position: absolute;
+            right: 2rem;
+        }
+
+        /* ====================================
+           RECENT WORK SECTION
+        ==================================== */
         .work-section {
             padding: 6rem 2rem;
             max-width: 1200px;
@@ -60,7 +86,6 @@
         .work-section h2 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
-            letter-spacing: -1px;
         }
 
         .work-section p.intro {
@@ -72,7 +97,6 @@
             margin-right: auto;
         }
 
-        /* Project Card */
         .project-container {
             display: flex;
             justify-content: center;
@@ -98,10 +122,6 @@
         .project-image {
             width: 100%;
             height: 450px;
-            background-color: #111;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             overflow: hidden;
             border-bottom: 1px solid #1a1a1a;
         }
@@ -129,7 +149,6 @@
         .project-info h3 {
             font-size: 2.2rem;
             margin-bottom: 1.2rem;
-            color: #fff;
         }
 
         .project-info p {
@@ -157,7 +176,9 @@
             transform: scale(1.05);
         }
 
-        /* Footer */
+        /* ====================================
+           FOOTER
+        ==================================== */
         footer {
             padding: 4rem 2rem;
             text-align: center;
@@ -166,53 +187,118 @@
             margin-top: 4rem;
         }
 
-        /* Responsive */
+        /* ====================================
+           RESPONSIVE
+        ==================================== */
         @media (max-width: 768px) {
-            .project-image { height: 280px; }
-            .work-section h2 { font-size: 2.8rem; }
-            .project-info { padding: 2rem; }
+
+            .nav-links {
+                position: absolute;
+                top: 80px;
+                right: 0;
+                background-color: #000;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                padding: 2rem 0;
+                gap: 1.5rem;
+                display: none;
+                border-top: 1px solid #1a1a1a;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .project-image {
+                height: 280px;
+            }
+
+            .work-section h2 {
+                font-size: 2.5rem;
+            }
+
+            .project-info {
+                padding: 2rem;
+            }
         }
+
     </style>
 </head>
+
 <body>
 
+    <!-- ================= NAVIGATION ================= -->
     <nav>
         <div class="nav-container">
-            <a href="index.html">Home</a>
-            <a href="case-studies.html">Case Studies</a>
-            <a href="testimonials.html">Testimonials</a>
-            <a href="recent-work.html" style="color: #4ade80;">Recent Work</a>
-            <a href="contact.html">Contact</a>
+
+            <div class="hamburger" id="hamburger">☰</div>
+
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="testimonials.html">Testimonials</a>
+                <a href="recent-work.html" class="active-link">Recent Work</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
         </div>
     </nav>
 
+    <!-- ================= RECENT WORK ================= -->
     <section class="work-section">
         <h2>Featured Project</h2>
-        <p class="intro">Showcasing digital solutions designed for impact, accessibility, and modern user experience.</p>
+        <p class="intro">
+            Showcasing digital solutions designed for impact, accessibility,
+            and modern user experience.
+        </p>
 
         <div class="project-container">
             <div class="project-card">
+
                 <div class="project-image">
-                    <img src="kamatage-preview.jpg" alt="Kamatage Hearing Aid Project" onerror="this.src='https://via.placeholder.com/850x450/111/4ade80?text=Kamatage+Hearing+Aid+Website'">
+                    <img src="kamatage-preview.jpg" alt="Kamatage Hearing Aid Project">
                 </div>
+
                 <div class="project-info">
                     <span class="project-tag">Web Development • Accessibility</span>
                     <h3>Kamatage Hearing Aid</h3>
                     <p>
-                        A specialized digital platform dedicated to providing information and hearing solutions. This project focuses on high accessibility standards, ensuring that users with hearing impairments can navigate and access vital information seamlessly. Built with a clean, modern interface and optimized for performance across all devices.
+                        A specialized digital platform dedicated to providing information
+                        and hearing solutions. Built with high accessibility standards,
+                        clean modern interface, and optimized performance across all devices.
                     </p>
-                    <a href="https://kamatage-hearing-aid.com/" target="_blank" rel="noopener noreferrer" class="visit-btn">
+
+                    <a href="https://kamatage-hearing-aid.com/" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="visit-btn">
                         Launch Live Site
                     </a>
                 </div>
+
             </div>
         </div>
     </section>
 
+    <!-- ================= FOOTER ================= -->
     <footer>
         <p>&copy; 2026 Junel. All rights reserved.</p>
     </footer>
 
+    <!-- ================= JAVASCRIPT ================= -->
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("navLinks");
+
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+    </script>
+
 </body>
 </html>
-
