@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Case Studies - Junel's Portfolio</title>
 
 <style>
 
-/* ====================================
-GLOBAL STYLES
-==================================== */
+/* ================= GLOBAL ================= */
 
 *{
 margin:0;
@@ -24,9 +23,7 @@ color:#fff;
 line-height:1.6;
 }
 
-/* ====================================
-NAVIGATION
-==================================== */
+/* ================= NAVIGATION ================= */
 
 nav{
 background:#000;
@@ -56,7 +53,6 @@ nav a{
 color:#fff;
 text-decoration:none;
 font-weight:500;
-font-size:1rem;
 text-transform:uppercase;
 letter-spacing:1px;
 transition:0.3s;
@@ -78,9 +74,7 @@ position:absolute;
 right:2rem;
 }
 
-/* ====================================
-CASE STUDIES
-==================================== */
+/* ================= CASE STUDIES ================= */
 
 .case-studies{
 padding:6rem 2rem;
@@ -90,7 +84,7 @@ text-align:center;
 }
 
 .case-studies h2{
-font-size:3.5rem;
+font-size:3rem;
 margin-bottom:3rem;
 }
 
@@ -104,11 +98,9 @@ gap:2rem;
 background:#0a0a0a;
 padding:3rem 2rem;
 border-radius:1.5rem;
-text-align:left;
 border:1px solid #1a1a1a;
 transition:0.3s;
-display:flex;
-flex-direction:column;
+text-align:left;
 }
 
 .card:hover{
@@ -127,19 +119,14 @@ margin-bottom:1rem;
 }
 
 .card h3{
-font-size:1.8rem;
 margin-bottom:1rem;
 }
 
 .card p{
 color:#aaa;
-margin-bottom:1.5rem;
-flex-grow:1;
 }
 
-/* ====================================
-VISUAL SHOWCASE SLIDER
-==================================== */
+/* ================= VISUAL SHOWCASE ================= */
 
 .sample-works{
 background:#050505;
@@ -170,11 +157,41 @@ width:100%;
 flex-shrink:0;
 height:420px;
 object-fit:cover;
+cursor:pointer;
 }
 
-/* ====================================
-FOOTER
-==================================== */
+/* ================= IMAGE MODAL ================= */
+
+.image-modal{
+display:none;
+position:fixed;
+z-index:999;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.95);
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.modal-content{
+max-width:95%;
+max-height:90%;
+border-radius:10px;
+}
+
+.close-modal{
+position:absolute;
+top:20px;
+right:40px;
+font-size:35px;
+color:white;
+cursor:pointer;
+}
+
+/* ================= FOOTER ================= */
 
 footer{
 padding:4rem 2rem;
@@ -183,11 +200,9 @@ color:#444;
 border-top:1px solid #1a1a1a;
 }
 
-/* ====================================
-RESPONSIVE
-==================================== */
+/* ================= MOBILE ================= */
 
-@media (max-width:768px){
+@media(max-width:768px){
 
 .nav-links{
 position:absolute;
@@ -211,21 +226,19 @@ display:flex;
 display:block;
 }
 
-.case-studies h2{
-font-size:2.5rem;
+.slides img{
+height:250px;
 }
 
-.case-grid{
-grid-template-columns:1fr;
-}
-
-.sample-works h2{
-font-size:2.2rem;
+.close-modal{
+right:20px;
+font-size:28px;
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
@@ -239,12 +252,14 @@ font-size:2.2rem;
 <div class="hamburger" id="hamburger">☰</div>
 
 <div class="nav-links" id="navLinks">
+
 <a href="index.html">Home</a>
 <a href="case-studies.html" class="active-link">Case Studies</a>
 <a href="testimonials.html">Testimonials</a>
 <a href="recent-work.html">Recent Work</a>
 <a href="contact.html">Contact</a>
 <a href="about-me.html">About Me</a>
+
 </div>
 
 </div>
@@ -263,9 +278,8 @@ font-size:2.2rem;
 <span class="tag">Healthcare Tech</span>
 <h3>Patient Record Management System</h3>
 <p>
-Developed a secure and centralized system for digitizing medical records.
-Features include automated patient history tracking, data encryption,
-and an intuitive interface for healthcare providers.
+Developed a secure system for digitizing medical records with encrypted data
+and automated patient history tracking.
 </p>
 </div>
 
@@ -273,9 +287,7 @@ and an intuitive interface for healthcare providers.
 <span class="tag">Booking Solutions</span>
 <h3>Online Appointment System</h3>
 <p>
-A full-stack booking engine built with Laravel and React.
-Optimized for high-traffic scheduling with real-time updates
-and automated notifications.
+A full-stack booking engine with real-time updates and automated notifications.
 </p>
 </div>
 
@@ -283,8 +295,7 @@ and automated notifications.
 <span class="tag">Personal Branding</span>
 <h3>Portfolio Website</h3>
 <p>
-A high-performance personal brand site with mobile-first
-approach and clean minimalist UI for showcasing projects.
+A minimalist and mobile-first personal portfolio for showcasing projects.
 </p>
 </div>
 
@@ -302,12 +313,12 @@ approach and clean minimalist UI for showcasing projects.
 
 <div class="slides" id="slides">
 
-<img src="booking.PNG">
-<img src="landing.PNG">
-<img src="dashboard.PNG">
-<img src="list.PNG">
-<img src="record.PNG">
-<img src="message.PNG">
+<img src="booking.PNG" onclick="openImage(this)">
+<img src="landing.PNG" onclick="openImage(this)">
+<img src="dashboard.PNG" onclick="openImage(this)">
+<img src="list.PNG" onclick="openImage(this)">
+<img src="record.PNG" onclick="openImage(this)">
+<img src="message.PNG" onclick="openImage(this)">
 
 </div>
 
@@ -315,17 +326,25 @@ approach and clean minimalist UI for showcasing projects.
 
 </section>
 
+<!-- IMAGE MODAL -->
+
+<div id="imageModal" class="image-modal">
+
+<span class="close-modal" onclick="closeImage()">✕</span>
+
+<img class="modal-content" id="modalImg">
+
+</div>
+
 <!-- ================= FOOTER ================= -->
 
 <footer>
 <p>© 2026 Junel. All rights reserved.</p>
 </footer>
 
-<!-- ================= JAVASCRIPT ================= -->
-
 <script>
 
-/* Hamburger Menu */
+/* HAMBURGER MENU */
 
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
@@ -334,7 +353,8 @@ hamburger.addEventListener("click", () => {
 navLinks.classList.toggle("active");
 });
 
-/* Auto Image Slider */
+
+/* AUTO SLIDER */
 
 const slides = document.getElementById("slides");
 const images = slides.querySelectorAll("img");
@@ -353,7 +373,26 @@ slides.style.transform = `translateX(-${index * 100}%)`;
 
 }
 
-setInterval(autoSlide, 2000);
+setInterval(autoSlide,2000);
+
+
+/* IMAGE MODAL */
+
+function openImage(img){
+
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImg");
+
+modal.style.display="flex";
+modalImg.src=img.src;
+
+}
+
+function closeImage(){
+
+document.getElementById("imageModal").style.display="none";
+
+}
 
 </script>
 
